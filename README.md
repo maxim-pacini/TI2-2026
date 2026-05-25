@@ -12,8 +12,9 @@ Vous les trouverez dans le dossier `data/` du dépôt.
 
 ## Marche à suivre
 
-- Créez un fork du dépôt TI2-2026 sur github.com puis clonez-le sur votre machine
-- Créez un hôte virtuel dans WAMP sur le dossier …/TI2-2026/public/ nommé TI2-2026
+- **Créez un fork du dépôt TI2-2026 sur github.com puis clonez-le sur votre machine**
+- Rajoutez un upstream pour pouvoir l'envoyer en fin de journée.
+- Créez un hôte virtuel dans **WAMP** sur le dossier …/TI2-2026/public/ nommé TI2-2026
 - Créez une base de données dans phpMyAdmin en important le fichier ti2web2026.sql (en MariaDB ou MySQL)
 - Enregistrez une copie de config.php.ini en config.php en vérifiant que cela correspond aux paramètres de votre base de données !
 
