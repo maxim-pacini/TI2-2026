@@ -15,15 +15,17 @@
 </head>
 <body>
     <header>
-        <div><img src="img/logo.png" alt="logo-site-web"></div>
-        <div>
+        <div class="btn-header">
+            <img src="img/logo.png" alt="logo-site-web">
+        </div>
+        <div class="btn-header">
             <h1>TI2 | Livre d'or</h1>
             <p>By Maxim Pacini</p>
         </div>
-        <div>
+        <div class="btn-header">
             <button>
                 <img src="img/gear3.png" alt="">
-                Administration
+                <p>Administration</p>
             </button>
         </div>
     </header>

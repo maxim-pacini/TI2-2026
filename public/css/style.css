@@ -170,6 +170,7 @@ li{
 .info{
     justify-content: flex-end;
 }
+
 @media screen and (width<=480px){
     body{
         /* background-color: yellowgreen; */
@@ -180,11 +181,24 @@ li{
         align-items: center;
         padding: 0;
     }
+    header, .btn-header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
     .formulaire{
         margin-bottom: 20px;
     }
     .global, .formulaire, .message{
         width: 100%;
+    }
+    button p{
+    display: none;
+    }
+    header div{
+        width: 100%;
+        display: inline;
     }
 }
 @media screen and (width>=480px) and (width<=980px){
@@ -208,4 +222,12 @@ li{
     .formulaire{
         margin-bottom: 20px;
     }
+    button p{
+    display: none;
+    }
+    header div{
+        width: 100%;
+        
+    }
+
 }
