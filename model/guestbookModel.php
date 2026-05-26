@@ -6,6 +6,8 @@
 
 // INSERTION d'un message dans le livre d'or
 
+
+
 /**
  * @param PDO $db
  * @param string $firstname

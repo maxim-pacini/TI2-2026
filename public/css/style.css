@@ -183,9 +183,9 @@ li{
         padding: 0;
     }
     header, .btn-header{
-        flex-direction: column;
+        /* flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: center; */
     }
     .btn-header{
         width: 100%;

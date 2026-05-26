@@ -46,6 +46,11 @@ try {
 /*
  * Si le formulaire a été soumis
  */
+if(isset($_POST['firstname'],$_POST['lastname'],$_POST['email'],$_POST['full_name'],$_POST['postcode'],$_POST['phone'],$_POST['message'])){
+    // envoi de nos var nécessaires à l'insertion 
+    $newcmt=addCommentaire($connectDB,$_POST['firstname'],$_POST['lastname'],$_POST['email'],$_POST['full_name'],$_POST['postcode'],$_POST['phone'],$_POST['message']);
+}
+
 
 // on appelle la fonction d'insertion dans la DB (addGuestbook())
 

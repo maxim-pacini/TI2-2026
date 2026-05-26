@@ -29,53 +29,35 @@
             </button>
         </div>
     </header>
-
-                    for="firstname" type="text"
-
-
-                    for="lastname" type="text"
-
-                    for="usermail" type="email"
-
-                    for="phone" type="text"
-
-                    for="postcode"
-                    type="text"
-
-                    for="message"
-                    type="text"
-
-
-
-
-    <main>
-        <form class="formulaire">
+    
+  <main>
+        <form class="formulaire" action="" method="POST">
             <img src="img/livre2R.png" alt="">
             <div class="global">
                 <h2>Votre message</h2>
                 <div class="champ">
-                    <label>Nom </label>
-                    <input placeholder="Ex: Smith">
+                    <label for="lastname">Nom </label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Ex: Smith">
                 </div>
                 <div class="champ">
-                    <label >prénom </label>
-                    <input placeholder="Ex: John">
+                    <label for="firstname">prénom </label>
+                    <input type="text" id="firstname" name="firstname" placeholder="Ex: John">
                 </div>
                 <div class="champ">
                     <label for="email">E-mail </label>
                     <input type="email" id="email" name="email" autocomplete="email" placeholder="Ex: John.smith@exemple.com">
                 </div>
                 <div class="champ">
-                    <label for="email">Code postal </label>
-                    <input type="text" placeholder="Ex: 1000" name="nom" id="nom">
+                    <label for="postcode">Code postal </label>
+                    <input placeholder="Ex: 1000" type="text" id="postcode" name="postcode">
                 </div>
                 <div class="champ">
-                    <label for="email">Téléphone </label>
-                    <input type="text" placeholder="Ex: 04 23 45 67 89" name="nom" id="nom">
+                    <label for="phone">Téléphone </label>
+                    <input type="text" id="phone" name="phone" placeholder="Ex: 04 23 45 67 89">
                 </div>
                 <div class="champ">
-                    <label for="text_comment">Message </label>
-                    <textarea id="text_comment" name="text_comment" placeholder="Un petit mot..."></textarea>
+                    <label for="message">Message </label>
+                    <textarea type="text" id="message" name="message" placeholder="Un petit mot..."></textarea>
                 </div>
                 <div class="champ info">
                     <p>0 / 3000 caractère</p>
