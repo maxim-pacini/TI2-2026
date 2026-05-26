@@ -25,7 +25,7 @@ require_once URL_BASE . "../model/guestbookModel.php";
  */
 try {
     $connectDB = new PDO(
-        dsn: DB_NAME,
+        dsn: MARIA_DSN,
         username: DB_LOGIN, 
         password: DB_PWD, 
         // options, on active les erreurs pour ne pas avoir de pages blanches en cas de désaxtivation (optionnel depuis PHP 8.0)
