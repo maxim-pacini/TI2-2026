@@ -10,17 +10,19 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(221, 221, 221);
+    /* background-color: rgb(221, 221, 221); */
+    background-color: rgba(106, 106, 255, 0.418);
 }
 header{
     margin-top: 10px;
-    background-color: rgb(26, 14, 192);
+    background-color: rgba(0, 0, 255, 0.349);
     width: 80vw;
     display: flex;
     border-radius: 25px;
     overflow: hidden;
     padding: 10px;
     box-shadow: 0px 0px 25px black;
+    margin-bottom: 25px;
     div{
         display: flex;
         justify-content: center;
@@ -63,10 +65,8 @@ header div:nth-child(3){
 }
 main{
     width: 80vw;
-    background-color: purple;
+    /* background-color: purple; */
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 2%;
     
     div{
@@ -79,7 +79,7 @@ main{
     }
 }
 .formulaire{
-    background-color: red;
+    /* background-color: red; */
     height: 100%;
     width: 35%;
     display: flex;
@@ -91,12 +91,13 @@ main{
     }
 }
 .message{
-    background-color: green;
+    /* background-color: green; */
     width: 65%;
-    color: white;
 }
 .global{
-    /* background-color: blue; */
+    background-color: rgba(0, 0, 255, 0.349);
+    border-radius: 10px;
+
     width: 100%;
     display: flex;
     gap: 20px;
@@ -128,7 +129,6 @@ h2{
     border-bottom: 2px solid white;
     width: 90%;
     padding-bottom: 5px;
-    color: white;
 }
 textarea{
     width: 75%;
@@ -157,8 +157,55 @@ li{
     width: 100%;
     border: 1px solid white;
     padding: 15px;
+    background-color: rgba(0, 0, 255, 0.349);
 
 }
-@media screen and (width>960px){
-    
+#btn-formulaire{
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: bold;
+}
+.info{
+    justify-content: flex-end;
+}
+@media screen and (width<=480px){
+    body{
+        background-color: yellowgreen;
+    }
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .formulaire{
+        margin-bottom: 20px;
+    }
+    .global, .formulaire, .message{
+        width: 100%;
+    }
+}
+@media screen and (width>=480px) and (width<=980px){
+    body{
+        background-color: brown;
+        justify-content: center;
+        align-items: center;
+    }
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    .global, .formulaire, .message{
+        width: 100%;
+    }
+    ul{
+        width: 100%;
+    }
+    .formulaire{
+        margin-bottom: 20px;
+    }
 }

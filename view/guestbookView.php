@@ -56,12 +56,15 @@
                     <label for="email">Message </label>
                     <textarea name="msg" placeholder="Un petit mot..."></textarea>
                 </div>
-                <div>
+                <div class="champ info">
                     <p>0 / 3000 caractère</p>
                 </div>
                 <div class="champ radio">
                     <input type="checkbox">
                     <label for="">J'accepte le stockage de mes données personnelles.</label>
+                </div>
+                <div class="champ">
+                    <button id="btn-formulaire">Envoyer le message</button>
                 </div>
             </div>
         </div>
@@ -134,20 +137,20 @@
                         <p><em>datemessage</em></p>
                         <p>message</p>
                     </li>
-                    
+
                 </ul>
         etc ...
         </div>
     </main>
 
 <!-- Formulaire d'ajout d'un message -->
-<h2>Ici le formulaire</h2>
+
 <!-- Si pas de message -->
-<h3>Pas encore de message</h3>
+<!-- <h3>Pas encore de message</h3> -->
 <!-- Si 1 message -->
-<h3>Il y a 1 message</h3>
+<!-- <h3>Il y a 1 message</h3> -->
 <!-- Si plusieurs messages -->
-<h3>Il y a X messages</h3>
+<!-- <h3>Il y a X messages</h3> -->
 
 <!-- Pagination (BONUS) -->
 
