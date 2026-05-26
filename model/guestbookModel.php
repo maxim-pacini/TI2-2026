@@ -27,8 +27,7 @@ function addGuestbook(PDO $db,
                     string $phone,
                     string $postcode,
                     string $message
-): bool
-{
+): bool {
     // traitement des données backend (SECURITE)
 
     // si pas de données complètes ou ne correspondant pas à nos attentes, on renvoie false
@@ -53,8 +52,7 @@ function addGuestbook(PDO $db,
  * venant de la base de données 'ti2web2026' et de la table 'guestbook'
  * Si pas de message, renvoie un tableau vide
  */
-function getAllGuestbook(PDO $db): array
-{
+function getAllGuestbook(PDO $db): array {
     // try catch
     // si la requête a réussi,
     // bonne pratique, fermez le curseur
@@ -72,14 +70,53 @@ function getAllGuestbook(PDO $db): array
  * @return int
  * Fonction qui compte le nombre total de messages dans la table 'guestbook'
  */
-function getNbTotalGuestbook(PDO $db): int
-{
+
+
+
+
+
+
+
+
+
+function readAllCommentaires(PDO $connect): array{
+$a=$connect->query("SELECT * FROM `commentaire` ORDER BY `post_date` DESC");
+// un tableau avec les results
+$result= $a-> fetchAll(PDO::FETCH_ASSOC);
+
+// Bonne pratique 
+$a->closeCursor();
+// retour du tableau
+ return $result;
+}
+
+
+
+// MOI
+function countAllCommentaires(PDO $db): int {
+
+        $a = $db->query("SELECT COUNT(*) AS count FROM guestbook");
+        return (int) $a->fetch()['count'];
+        
+}
+
+
+
+
+
+
+
+
+
+
+function getNbTotalGuestbook(PDO $db): int {
 
     // bonne pratique, fermez le curseur,
     // renvoyez le nombre total de messages
     return 0;
 
 }
+
 // SELECTION de messages dans le livre d'or par ordre de date croissante
 // en lien avec la pagination
 /**
@@ -92,8 +129,7 @@ function getNbTotalGuestbook(PDO $db): int
  * en utilisant une requête préparée (injection SQL), n'affiche que les messages
  * de la page courante
  */
-function getGuestbookPagination(PDO $db, int $pageActu=1, int $limit=5): array
-{
+function getGuestbookPagination(PDO $db, int $pageActu=1, int $limit=5): array {
     // Requête préparée obligatoire !
     // Le $offset et le $limit sont des entiers, il faut donc les passer
     // en paramètres de la requête préparée en tant qu'entiers !
@@ -115,8 +151,7 @@ function getGuestbookPagination(PDO $db, int $pageActu=1, int $limit=5): array
  * Fonction qui génère le code HTML de la pagination
  * si le nombre de pages est supérieur à une.
  */
-function pagination(int $nbtotalMessage, string $url="./?", string $get="page", int $pageActu=1, int $perPage=5 ): string
-{
+function pagination(int $nbtotalMessage, string $url="./?", string $get="page", int $pageActu=1, int $perPage=5 ): string {
     $sortie = "";
     if ($nbtotalMessage === 0) return "";
     $nbPages = ceil($nbtotalMessage / $perPage);

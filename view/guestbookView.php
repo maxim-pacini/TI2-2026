@@ -29,22 +29,41 @@
             </button>
         </div>
     </header>
+
+                    for="firstname" type="text"
+
+
+                    for="lastname" type="text"
+
+                    for="usermail" type="email"
+
+                    for="phone" type="text"
+
+                    for="postcode"
+                    type="text"
+
+                    for="message"
+                    type="text"
+
+
+
+
     <main>
-        <div class="formulaire">
+        <form class="formulaire">
             <img src="img/livre2R.png" alt="">
             <div class="global">
                 <h2>Votre message</h2>
                 <div class="champ">
-                    <label for="nom">Nom </label>
-                    <input type="text" placeholder="Ex: Smith" name="nom" id="nom">
+                    <label>Nom </label>
+                    <input placeholder="Ex: Smith">
                 </div>
                 <div class="champ">
-                    <label for="prénom">prénom </label>
-                    <input type="text" placeholder="Ex: John" name="nom" id="nom">
+                    <label >prénom </label>
+                    <input placeholder="Ex: John">
                 </div>
                 <div class="champ">
                     <label for="email">E-mail </label>
-                    <input type="text" placeholder="Ex: John.smith@exemple.com" name="nom" id="nom">
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="Ex: John.smith@exemple.com">
                 </div>
                 <div class="champ">
                     <label for="email">Code postal </label>
@@ -55,8 +74,8 @@
                     <input type="text" placeholder="Ex: 04 23 45 67 89" name="nom" id="nom">
                 </div>
                 <div class="champ">
-                    <label for="email">Message </label>
-                    <textarea name="msg" placeholder="Un petit mot..."></textarea>
+                    <label for="text_comment">Message </label>
+                    <textarea id="text_comment" name="text_comment" placeholder="Un petit mot..."></textarea>
                 </div>
                 <div class="champ info">
                     <p>0 / 3000 caractère</p>
@@ -66,10 +85,10 @@
                     <label for="">J'accepte le stockage de mes données personnelles.</label>
                 </div>
                 <div class="champ">
-                    <button id="btn-formulaire">Envoyer le message</button>
+                    <button id="btn-formulaire" type="submit">Envoyer le message</button>
                 </div>
             </div>
-        </div>
+</form>
         <div class="message">
             <h2>Message Récents</h2>
                 <ul>
@@ -166,6 +185,8 @@ echo '<p>$_POST</p>';
 var_dump($_POST);
 echo '<p>$_GET</p>';
 var_dump($_GET);
+echo 'var dump nombre de com';
+var_dump($a);
 ?>
 
 <script src="js/validation.js"></script>
