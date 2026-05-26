@@ -1,0 +1,164 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(221, 221, 221);
+}
+header{
+    margin-top: 10px;
+    background-color: rgb(26, 14, 192);
+    width: 80vw;
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: 0px 0px 25px black;
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+}
+header div:nth-child(1){
+    /* background-color: blue; */
+    width: 25%;
+    justify-content: flex-start;
+    padding-left: 15px;
+    img{
+        height: 60px;
+    }
+}
+header div:nth-child(2){
+    /* background-color: green; */
+    width: 50%;
+    flex-direction: column;
+}
+header div:nth-child(3){
+    /* background-color: purple; */
+    justify-content: flex-end;
+    padding-right: 15px;
+    width: 25%;
+    button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 7px;
+        border-radius: 10px;
+        border: none;
+        img{
+            height: 20px;
+        }
+    }
+    
+}
+main{
+    width: 80vw;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    
+    div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+        
+    }
+}
+.formulaire{
+    background-color: red;
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    img{
+        height: 70px;
+        margin: 20px 0;
+    }
+}
+.message{
+    background-color: green;
+    width: 65%;
+    color: white;
+}
+.global{
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+.champ{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    /* background-color: red; */
+    gap: 7px;
+    label{
+        width: 25%;
+        text-align: end;
+        font-weight: bold;
+    }
+    input{
+        width: 75%;
+        border-radius: 10px;
+        border: none;
+        padding: 10px;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, );
+    }
+}
+h2{
+    border-bottom: 2px solid white;
+    width: 90%;
+    padding-bottom: 5px;
+    color: white;
+}
+textarea{
+    width: 75%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 10px;
+}
+.radio{
+    input{
+        width: 10%;
+    }
+    label{
+        width: 90%;
+    }
+}
+ul{
+    padding: 15px;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+li{
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid white;
+    padding: 15px;
+
+}
+@media screen and (width>960px){
+    
+}
