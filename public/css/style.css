@@ -172,7 +172,7 @@ li{
 }
 @media screen and (width<=480px){
     body{
-        background-color: yellowgreen;
+        /* background-color: yellowgreen; */
     }
     main{
         flex-direction: column;
@@ -189,7 +189,7 @@ li{
 }
 @media screen and (width>=480px) and (width<=980px){
     body{
-        background-color: brown;
+        /* background-color: brown; */
         justify-content: center;
         align-items: center;
     }
