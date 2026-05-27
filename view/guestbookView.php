@@ -31,7 +31,150 @@
     </header>
     
   <main>
-        <form class="formulaire" action="" method="POST">
+    <!-- Formulaire d'ajout d'un message -->
+        <div class="formulaire">
+            <div class="book-img-container">
+                <img src="./img/livre2.png" alt="">
+            </div>
+            <form action="" method="post" id="guestbookForm" novalidate>
+
+                <div class="champ">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" name="firstname" id="firstname"
+                        value="<?= htmlspecialchars($_POST['firstname'] ?? '') ?>" required>
+                </div>
+
+                <div class="champ">
+                    <label for="lastname">Nom</label>
+                    <input type="text" name="lastname" id="lastname"
+                        value="<?= htmlspecialchars($_POST['lastname'] ?? '') ?>" required>
+                </div>
+
+                <div class="champ">
+                    <label for="usermail">E-mail</label>
+                    <input type="email" name="usermail" id="usermail"
+                        value="<?= htmlspecialchars($_POST['usermail'] ?? '') ?>" required>
+                </div>
+
+                <div class="champ">
+                    <label for="postcode">Code Postal</label>
+                    <input type="text" name="postcode" id="postcode"
+                        value="<?= htmlspecialchars($_POST['postcode'] ?? '') ?>" required>
+                </div>
+
+                <div class="champ">
+                    <label for="phone">Numero de Téléphone</label>
+                    <input type="text" name="phone" id="phone" value="<?= htmlspecialchars($_POST['phone'] ?? '') ?>"
+                        required>
+                </div>
+
+                <div class="champ">
+                    <label for="message">Message</label>
+                    <div class="textarea-wrapper">
+                        <textarea name="message" id="message" rows="5"
+                            required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
+                        <span id="charCount" class="char-count">0 / 3000 caractères</span>
+                    </div>
+                </div>
+
+                <button class="submit-btn" type="submit" id="btn-formulaire">Envoyer</button>
+
+            </form>
+
+
+
+
+
+
+    <?php
+            // on a tenté d'envoyé le formulaire et
+            if (isset($insert)):
+                // échec de l'insertion
+                if ($insert === false):
+            ?>
+                    <div class="not-insert-message">
+                        échec lors d'un l'insertion <a href="javascript:history.go(-1);">Vérifiez votre formulaire</a>
+                    </div>
+                <?php
+                // réussite de l'insertion
+                else:
+                ?>
+                    <div class="insert-message">
+                        Merci pour votre message, vous allez être redirigé
+                        <script>
+                            setTimeout(
+                                function() {
+                                    window.location.href = "./";
+                                }, 500
+                            );
+                        </script>
+                    </div>
+            <?php
+            endif;
+        endif;
+        ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <form class="formulaire" action="" method="POST">
             <img src="img/livre2R.png" alt="">
             <div class="global">
                 <h2>Votre message</h2>
@@ -70,81 +213,34 @@
                     <button id="btn-formulaire" type="submit">Envoyer le message</button>
                 </div>
             </div>
-</form>
-        <div class="message">
+        </form> -->
+
+        
+        <!-- <div class="message">
             <h2>Message Récents</h2>
                 <ul>
                     <li>
                         <p><strong>firstname lastname</strong></p>
                         <p><em>datemessage</em></p>
                         <p>message</p>
-                    </li>
+                    </li> -->
                     <!-- Autres messages -->
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-                    <li>
-                        <p><strong>firstname lastname</strong></p>
-                        <p><em>datemessage</em></p>
-                        <p>message</p>
-                    </li>
-
-                </ul>
+                <!-- </ul>
         etc ...
-        </div>
+        </div> -->
+
+
+
+
     </main>
+
+
+
+
+
+
+
+
 
 <!-- Formulaire d'ajout d'un message -->
 

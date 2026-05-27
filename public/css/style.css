@@ -11,12 +11,12 @@ body{
     align-items: center;
     flex-direction: column;
     /* background-color: rgb(221, 221, 221); */
-    background-color: #7fb2fd;
+    background-color: whitesmoke;
     
 }
 header{
     margin-top: 10px;
-    background-color: #0440c0;
+    background-color: linear-gradient(to right, red , blue);
     width: 80vw;
     display: flex;
     border-radius: 25px;
@@ -80,7 +80,7 @@ main{
     }
 }
 .formulaire{
-    /* background-color: red; */
+    background-color: red;
     height: 100%;
     width: 35%;
     display: flex;
@@ -171,6 +171,13 @@ li{
 .info{
     justify-content: flex-end;
 }
+
+
+
+
+
+
+
 
 @media screen and (width<=480px){
     body{
