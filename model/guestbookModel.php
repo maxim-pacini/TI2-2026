@@ -22,25 +22,69 @@
  * Une requête préparée est utilisée pour éviter les injections SQL
  * Les données sont échappées pour éviter les injections XSS (protection backend)
  */
-function addGuestbook(PDO $db,
-                    string $firstname,
-                    string $lastname,
-                    string $usermail,
-                    string $phone,
-                    string $postcode,
-                    string $message
-): bool {
+function addGuestbook(PDO $db,string $firstname,string $lastname,string $usermail,string $phone,string $postcode,string $message): bool {
     // traitement des données backend (SECURITE)
+//si pas de données complètes ou ne correspondant pas à nos attentes, on renvoie false
+    $usermail = filter_var($usermail, FILTER_VALIDATE_EMAIL);
+    $message = htmlspecialchars(trim(strip_tags($message)));
+    $firstname = htmlspecialchars(trim(strip_tags($firstname)));
+    $lastname = htmlspecialchars(trim(strip_tags($lastname)));
+    $phone = htmlspecialchars(trim(strip_tags($phone)));
+    $postcode = htmlspecialchars(trim(strip_tags($postcode)));
 
-    // si pas de données complètes ou ne correspondant pas à nos attentes, on renvoie false
-    return false;
-    // requête préparée obligatoire !
+    if (
+        $usermail === false         ||
+        strlen($usermail) >= 200    ||
+        empty($firstname)           ||
+        empty($lastname)            ||
+        strlen($firstname) >= 100   ||
+        strlen($lastname) >= 100    ||
+        empty($phone)               ||
+        strlen($phone) != 10        ||
+        empty($postcode)            ||
+        strlen($postcode) != 4      ||
+        empty($message)             ||
+        strlen($message) > 300
+    ) return false;    // requête préparée obligatoire !
 
     // si l'insertion a réussi
     // on renvoie true
     // sinon, on renvoie false
 
+
+
+    $prepare = $db->prepare("
+    INSERT INTO `guestbook`(`firstname`,`lastname`,`usermail`,`phone`,`postcode`,`message`)
+    VALUES(:firstname,:lastname,:usermail,:phone,:postcode,:message); 
+    ");
+    # on met nos val dans 
+    $prepare->bindValue(':firstname', $firstname);
+    $prepare->bindValue(':lastname', $lastname);
+    $prepare->bindValue(':usermail', $usermail);
+    $prepare->bindValue(':phone', $phone);
+    $prepare->bindValue(':postcode', $postcode);
+    $prepare->bindValue(':message', $message);
+
+    # on exécute la requete
+    // var_dump($db, $firstname, $lastname, $usermail, $phone, $postcode, $message);
+    $retour = $prepare->execute();
+    return $retour; // true en cas de réussite, false en cas d'échec
+
+
+//   var_dump($db,$mail,$message);
+
+    // requête préparée obligatoire !
+    // si l'insertion a réussi
+    // on renvoie true
+    // sinon, on renvoie false
+
+    // bonne pratique
+    // return envoi true si réussi, false en cas d'échec
+
+    // return $insert;
 }
+
+
 
 /***************************
  * Sans le Bonus Pagination
@@ -61,6 +105,22 @@ function getAllGuestbook(PDO $db): array {
     // renvoyer le tableau de(s) message(s)
     return [];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**************************
  * Pour le Bonus Pagination

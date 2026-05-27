@@ -37,27 +37,27 @@
                 <h2>Votre message</h2>
                 <div class="champ">
                     <label for="lastname">Nom </label>
-                    <input type="text" id="lastname" name="lastname" placeholder="Ex: Smith">
+                    <input type="text" id="lastname" name="lastname" placeholder="Ex: Smith" value="<?=htmlspecialchars($_POST["lastname"]??"")?>">
                 </div>
                 <div class="champ">
                     <label for="firstname">prénom </label>
-                    <input type="text" id="firstname" name="firstname" placeholder="Ex: John">
+                    <input type="text" id="firstname" name="firstname" placeholder="Ex: John"  value="<?=htmlspecialchars($_POST["firstname"]??"")?>">
                 </div>
                 <div class="champ">
                     <label for="email">E-mail </label>
-                    <input type="email" id="email" name="email" autocomplete="email" placeholder="Ex: John.smith@exemple.com">
+                    <input type="email" id="email" name="email" autocomplete="email" placeholder="Ex: John.smith@exemple.com"  value="<?=htmlspecialchars($_POST["usermail"]??"")?>">
                 </div>
                 <div class="champ">
                     <label for="postcode">Code postal </label>
-                    <input placeholder="Ex: 1000" type="text" id="postcode" name="postcode">
+                    <input placeholder="Ex: 1000" type="text" id="postcode" name="postcode"  value="<?=htmlspecialchars($_POST["postcode"]??"")?>">
                 </div>
                 <div class="champ">
                     <label for="phone">Téléphone </label>
-                    <input type="text" id="phone" name="phone" placeholder="Ex: 04 23 45 67 89">
+                    <input type="text" id="phone" name="phone" placeholder="Ex: 04 23 45 67 89"  value="<?=htmlspecialchars($_POST["phone"]??"")?>">
                 </div>
                 <div class="champ">
                     <label for="message">Message </label>
-                    <textarea type="text" id="message" name="message" placeholder="Un petit mot..."></textarea>
+                    <textarea type="text" id="message" name="message" placeholder="Un petit mot..."  value="<?=htmlspecialchars($_POST["message"]??"")?>"></textarea>
                 </div>
                 <div class="champ info">
                     <p>0 / 3000 caractère</p>

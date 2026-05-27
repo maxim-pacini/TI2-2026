@@ -16,7 +16,7 @@ body{
 }
 header{
     margin-top: 10px;
-    background-color: #0041cc;
+    background-color: #0440c0;
     width: 80vw;
     display: flex;
     border-radius: 25px;
@@ -96,7 +96,7 @@ main{
     width: 65%;
 }
 .global{
-    background-color: #0041cc;
+    background-color: #2665ee;
     border-radius: 10px;
 
     width: 100%;
@@ -158,7 +158,7 @@ li{
     width: 100%;
     border: 1px solid white;
     padding: 15px;
-    background-color: #0041cc;
+    background-color: #2665ee;
 
 }
 #btn-formulaire{
@@ -182,17 +182,15 @@ li{
         align-items: center;
         padding: 0;
     }
-    header, .btn-header{
-        /* flex-direction: column;
-        justify-content: center;
-        align-items: center; */
+    header{
+        flex-direction: column;
+
     }
-    .btn-header{
+    header div{
         width: 100%;
-    }
-    header div h1{
-        width: 100%;
-        background-color: red;
+        /* background-color: red; */
+        
+        display: flex;
     }
     
     .formulaire{
@@ -207,6 +205,25 @@ li{
     header div{
         width: 100%;
     }
+    header div:nth-child(2){
+    /* background-color: green; */
+    width: 100%;
+    }
+    header div:nth-child(1){
+    /* background-color: green; */
+    justify-content: center;
+    width: 100%;
+    }
+    header div:nth-child(3){
+    /* background-color: green; */
+    width: 100%;
+    justify-content: center;
+
+    }
+
+
+
+
 }
 
 @media screen and (width>=480px) and (width<=980px){
@@ -235,7 +252,6 @@ li{
     }
     header div{
         width: 100%;
-        
     }
 
 }
