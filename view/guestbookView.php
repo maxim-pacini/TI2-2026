@@ -36,7 +36,7 @@
             <div class="book-img-container">
                 <img src="./img/livre2.png" alt="">
             </div>
-            <form action="" method="post" id="guestbookForm" novalidate>
+            <form class="train" action="" method="post" id="guestbookForm" novalidate>
 
                 <div class="champ">
                     <label for="firstname">Prénom</label>
@@ -63,16 +63,15 @@
                 </div>
 
                 <div class="champ">
-                    <label for="phone">Numero de Téléphone</label>
+                    <label for="phone">Téléphone</label>
                     <input type="text" name="phone" id="phone" value="<?= htmlspecialchars($_POST['phone'] ?? '') ?>"
                         required>
                 </div>
 
-                <div class="champ">
+                <div class="champ2">
                     <label for="message">Message</label>
                     <div class="textarea-wrapper">
-                        <textarea name="message" id="message" rows="5"
-                            required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
+                        <textarea name="message" id="message" required><?= htmlspecialchars($_POST['message'] ?? '') ?></textarea>
                         <span id="charCount" class="char-count">0 / 3000 caractères</span>
                     </div>
                 </div>

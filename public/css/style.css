@@ -10,19 +10,18 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* background-color: rgb(221, 221, 221); */
-    background-color: whitesmoke;
+    background-color: #590D22;
     
 }
 header{
     margin-top: 10px;
-    background-color: linear-gradient(to right, red , blue);
+    background-color: #A4133C;
+    box-shadow: 0px 0px 50px #800F2F;
     width: 80vw;
     display: flex;
     border-radius: 25px;
     overflow: hidden;
     padding: 10px;
-    box-shadow: 0px 0px 25px black;
     margin-bottom: 25px;
     div{
         display: flex;
@@ -80,22 +79,32 @@ main{
     }
 }
 .formulaire{
-    background-color: red;
+    /* background-color: red; */
     height: 100%;
     width: 35%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     img{
-        width: 90px;
+        width: 150px;
         margin: 20px 0;
     }
 }
 .message{
     /* background-color: green; */
     width: 65%;
+    background-color: black;
 }
-.global{
+.train{
+    width: 90%;
+    background-color: #A4133C;
+    box-shadow: 0px 0px 25px #921136;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* .global{
     background-color: #2665ee;
     border-radius: 10px;
 
@@ -103,13 +112,15 @@ main{
     display: flex;
     gap: 20px;
     padding: 10px;
-}
+} */
 .champ{
-    width: 90%;
+    width: 100%;
+    /* background-color: #2665ee; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 20px;
     /* background-color: red; */
     gap: 7px;
     label{
@@ -126,13 +137,27 @@ main{
         background-color: rgba(255, 255, 255, );
     }
 }
+.champ2{
+    width: 100%;
+    display: flex;
+    /* background-color: aqua; */
+    margin-bottom: 20px;
+    flex-direction: row;
+    label{
+        width: 25%;
+    }
+    input{
+        width: 75%;
+    }
+
+}
 h2{
     border-bottom: 2px solid white;
     width: 90%;
     padding-bottom: 5px;
 }
 textarea{
-    width: 75%;
+    width: 100%;
     height: 150px;
     padding: 10px;
     border-radius: 10px;
