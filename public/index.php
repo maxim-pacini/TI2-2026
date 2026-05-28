@@ -9,7 +9,7 @@
 /*
  * Chargement des dépendances
  */
-// chargement de configuration
+// chargement de configurat
 require_once "../config.php";
 // chargement du modèle de la table guestbook
 require_once URL_BASE . "/model/guestbookModel.php";
