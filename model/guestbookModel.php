@@ -98,12 +98,20 @@ function addGuestbook(PDO $db,string $firstname,string $lastname,string $usermai
  * venant de la base de données 'ti2web2026' et de la table 'guestbook'
  * Si pas de message, renvoie un tableau vide
  */
-function getAllGuestbook(PDO $db): array {
+function getAllGuestbook(PDO $db): array
+{
     // try catch
     // si la requête a réussi,
     // bonne pratique, fermez le curseur
     // renvoyer le tableau de(s) message(s)
-    return [];
+    $stmt = $db->query("SELECT * FROM `guestbook` ORDER BY `datemessage` DESC");
+    // un tableau avec les results
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    // Bonne pratique 
+    $stmt->closeCursor();
+    // retour du tableau
+    return $result;
 }
 
 

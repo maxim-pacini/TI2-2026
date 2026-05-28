@@ -1,8 +1,15 @@
+@font-face {
+    font-family: 'Serrat'; /* Nom que vous utiliserez dans votre CSS */
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype'); /* Chemin et format du fichier */
+    font-weight: normal;
+    font-style: normal;
+}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Serrat', sans-serif;
+
 }
 
 body{
@@ -10,13 +17,15 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #590D22;
+    /* background-color: #641220; */
+    background-image: linear-gradient(to bottom, #570e1b, #92172a);
     
 }
 header{
     margin-top: 10px;
-    background-color: #A4133C;
-    box-shadow: 0px 0px 50px #800F2F;
+    background-color: rgba(255, 255, 255, 0.39);
+    border: 1px solid white;
+    box-shadow: 0px 0px 50px #e01e37;
     width: 80vw;
     display: flex;
     border-radius: 25px;
@@ -68,14 +77,11 @@ main{
     /* background-color: purple; */
     display: flex;
     gap: 2%;
-    
     div{
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        
-        
+        flex-direction: column; 
     }
 }
 .formulaire{
@@ -85,34 +91,36 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
     img{
-        width: 150px;
-        margin: 20px 0;
+        width: 190px;
+        margin: 5px 0;
     }
+}
+label{
+    font-weight: bold;
 }
 .message{
     /* background-color: green; */
     width: 65%;
-    background-color: black;
+    
+    /* background-color: black; */
+    color: white;
+    
+    ul{
+        width: 100%;
+        color: black;
+        padding: 25px;
+    }
 }
 .train{
-    width: 90%;
-    background-color: #A4133C;
-    box-shadow: 0px 0px 25px #921136;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/* .global{
-    background-color: #2665ee;
-    border-radius: 10px;
-
     width: 100%;
-    display: flex;
-    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.39);
+    border: 1px solid white;
+    box-shadow: 0px 0px 50px #e01e37;
     padding: 10px;
-} */
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.74); */
+}
 .champ{
     width: 100%;
     /* background-color: #2665ee; */
@@ -121,7 +129,7 @@ main{
     align-items: center;
     flex-direction: row;
     margin-bottom: 20px;
-    /* background-color: red; */
+    /* background-color: purple; */
     gap: 7px;
     label{
         width: 25%;
@@ -134,21 +142,46 @@ main{
         border: none;
         padding: 10px;
         border: 1px solid white;
-        background-color: rgba(255, 255, 255, );
+        background-color: rgba(255, 255, 255, 0.39);
     }
 }
 .champ2{
     width: 100%;
+    /* background-color: chocolate; */
     display: flex;
-    /* background-color: aqua; */
-    margin-bottom: 20px;
     flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
     label{
+        /* background-color: red; */
         width: 25%;
     }
-    input{
-        width: 75%;
+}
+.textarea-wrapper{
+    width: 75%;
+    textarea{
+        resize: none;
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.39);
     }
+}
+.char-count{
+    width: 100%;
+    text-align: end;
+    
+}
+
+.champ3{
+    width: 100%;
+    /* background-color: chocolate; */
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 0px 15px;
+    margin-bottom: 20px;
 
 }
 h2{
@@ -156,12 +189,7 @@ h2{
     width: 90%;
     padding-bottom: 5px;
 }
-textarea{
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border-radius: 10px;
-}
+
 .radio{
     input{
         width: 10%;
@@ -181,9 +209,12 @@ ul{
 li{
     border-radius: 10px;
     width: 100%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     padding: 15px;
-    background-color: #2665ee;
+    /* background-color: #2665ee; */
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.39);
+    box-shadow: 0px 0px 50px #e01e37;
 
 }
 #btn-formulaire{
@@ -192,10 +223,51 @@ li{
     border-radius: 10px;
     border: 0px;
     font-weight: bold;
+    background-color: #92172a;
+    color: white;
+    background-image: linear-gradient(to left, #570e1b, #92172a);
 }
 .info{
     justify-content: flex-end;
 }
+footer{
+    height: 95px;
+    width: 99.2vw;
+    margin-top: 20px;
+    background-color: #570e1b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+        border-radius: 10px;
+        padding: 8px 10px;
+        height: 33px;
+        border: transparent;
+        background-color: #212121;
+        color: white;
+        
+    }
+}
+
+
+
+
+
+
+/* darkmode */
+
+#body.sombre {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
 
 
 

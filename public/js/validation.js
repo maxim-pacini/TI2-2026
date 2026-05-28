@@ -1,3 +1,13 @@
+$(document).ready(function(){
+
+  $("#darkmode").click(function(){
+        $("#body").toggleClass('sombre'); 
+    });
+
+
+
+
+});
 /* ============================================================================
    TRAVAIL D'INTÉGRATION JAVASCRIPT / jQuery
    Gestion d'un formulaire de contact + Dark Mode

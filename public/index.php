@@ -48,29 +48,13 @@ try {
 // on appelle la fonction d'insertion dans la DB (addGuestbook())
 
 $feedbackMessage = null;
-if (isset($_SESSION['feedbackMessage'])) {
-    $feedbackMessage = $_SESSION['feedbackMessage'];
-    unset($_SESSION['feedbackMessage']);
-}
+
 /* Si le formulaire a été soumis*/
 if (isset(
-    $_POST['firstname'],
-    $_POST['lastname'],
-    $_POST['usermail'],
-    $_POST['phone'],
-    $_POST['postcode'],
-    $_POST['message']
+    $_POST['firstname'],$_POST['lastname'],$_POST['usermail'],$_POST['phone'],$_POST['postcode'],$_POST['message']
 )) {
     // on appelle la fonction d'insertion dans la DB (addGuestbook())
-    $insert = addGuestbook(
-        db: $connectDB,
-        firstname: $_POST['firstname'],
-        lastname: $_POST['lastname'],
-        usermail: $_POST['usermail'],
-        phone: $_POST['phone'],
-        postcode: $_POST['postcode'],
-        message: $_POST['message']
-    );
+    $insert = addGuestbook(db: $connectDB,firstname: $_POST['firstname'],lastname: $_POST['lastname'],usermail: $_POST['usermail'],phone: $_POST['phone'],postcode: $_POST['postcode'],message: $_POST['message']);
     // si l'insertion a réussi
     if ($insert === true) {
         // Succès : on stocke le message en session et on redirige 
@@ -81,7 +65,7 @@ if (isset(
     }
 }
 // on appelle la fonction de récupération de la DB (getAllGuestbook())
-$messages   = getAllGuestbook($connectDB);
+$messages = getAllGuestbook($connectDB);
 $nbMessages = count($messages);
 
 
