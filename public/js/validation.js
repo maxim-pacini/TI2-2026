@@ -1,13 +1,110 @@
-$(document).ready(function(){
+$(document).ready(function () {
+  $("#dark").click(function () {
+    $("#body").toggleClass("sombre");
+    $("#body").toggleClass("light");
 
-  $("#darkmode").click(function(){
-        $("#body").toggleClass('sombre'); 
-    });
+    if ($("#body").hasClass("sombre")) {
+      $("#dark").text("☀️Lightmode ");
+    } else {
+      $("#dark").text("🌙darkmode");
+    }
+  });
+
+  $("#firstname").on("keyup",function () {
+    const regexfn = /^[A-Za-zÀ-ÿ]{3,}(?:[ '\-][A-Za-zÀ-ÿ]+)*$/;
+    const firstname = $("#firstname").val();
+    $('#msgfirstname').removeClass('error succes');
+    if(!regexfn.test(firstname)){
+      $('#msgfirstname').text('*Prénom invalide');
+      $('#msgfirstname').addClass('error');
+
+      
+    }else{
+      $('#msgfirstname').text('Prénom valide');
+      $('#msgfirstname').addClass('succes');
+    }
+    
+  });
+
+$("#lastname").on("keyup",function () {
+    const regexln = /^[A-Za-zÀ-ÿ]{3,}(?:[ '\-][A-Za-zÀ-ÿ]+)*$/;
+    const lastname = $("#lastname").val();
+    $('#msglastname').removeClass('error succes');
+    if(!regexln.test(lastname)){
+      $('#msglastname').text('*Nom invalide');
+      $('#msglastname').addClass('error');
+    }else{
+      $('#msglastname').text('Nom valide');
+      $('#msglastname').addClass('succes');
+    }
+  });
+
+  $("#usermail").on("keyup", function () {
+    const regexum = /^[\w.!#$%&'*+\/=?`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/;
+    const usermail = $("#usermail").val();
+    $('#msgusermail').removeClass('error succes');
+    if (!regexum.test(usermail)) {
+        $('#msgusermail').text('*Email invalide');
+        $('#msgusermail').addClass('error');
+    } else {
+        $('#msgusermail').text('Email valide');
+        $('#msgusermail').addClass('succes');
+    }
+});
+
+$("#postcode").on("keyup", function () {
+    const regexpc = /^\d{4}$/;
+    const postcode = $("#postcode").val();
+    $('#msgpostcode').removeClass('error succes');
+    if (!regexpc.test(postcode)) {
+        $('#msgpostcode').text('*Code postal invalide');
+        $('#msgpostcode').addClass('error');
+    } else {
+        $('#msgpostcode').text('Code postal valide');
+        $('#msgpostcode').addClass('succes');
+    }
+});
+
+let i = 0;
+  $("#message").on("keyup", function(e){
+    if(e.keyCode==8){
+      $("#count").text(i -= 1);
+    }else{
+      $("#count").text(i += 1);
+    }
+  });
+  $("#message").on("keyup", function(e){
+    if (i>1) {
+        $('#count').addClass('error2');
+    } else {
+        $('#count').addClass('succes2');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 });
+
+
+
+
 /* ============================================================================
    TRAVAIL D'INTÉGRATION JAVASCRIPT / jQuery
    Gestion d'un formulaire de contact + Dark Mode
@@ -150,4 +247,3 @@ $(document).ready(function(){
 
    Bon travail !
    ========================================================================= */
-

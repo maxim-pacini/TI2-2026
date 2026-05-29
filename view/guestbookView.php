@@ -12,9 +12,10 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
+<body id="body" class="light">
+    <header id="header">
         <div class="btn-header">
             <img src="img/logo.png" alt="logo-site-web">
         </div>
@@ -37,32 +38,32 @@
                 <img src="./img/livre2.png" alt="">
             </div>
             <form class="train" action="" method="post" id="guestbookForm" novalidate>
-
-                <div class="champ">
+                <span id="msgfirstname"></span>
+                <div class="champ" id="divfirstname">
                     <label for="firstname">Prénom</label>
                     <input type="text" name="firstname" id="firstname" value="<?= htmlspecialchars($_POST['firstname'] ?? '') ?>"placeholder="ex: John" required>
                 </div>
-
+                <span id="msglastname"></span>
                 <div class="champ">
                     <label for="lastname">Nom</label>
                     <input type="text" name="lastname" id="lastname" value="<?= htmlspecialchars($_POST['lastname'] ?? '') ?>" placeholder="ex: Smith" required>
                 </div>
-
+                <span id="msgusermail"></span>
                 <div class="champ">
                     <label for="usermail">E-mail</label>
                     <input type="email" name="usermail" id="usermail" value="<?= htmlspecialchars($_POST['usermail'] ?? '') ?>"placeholder="ex: John.Smith@gmail.com" required>
                 </div>
-
+                <span id="msgpostcode"></span>
                 <div class="champ">
                     <label for="postcode">Code Postal</label>
                     <input type="text" name="postcode" id="postcode" value="<?= htmlspecialchars($_POST['postcode'] ?? '') ?>"placeholder="ex: 1040" required>
                 </div>
-
+                <span id="msgphone"></span>
                 <div class="champ">
                     <label for="phone">Téléphone</label>
                     <input type="text" name="phone" id="phone" value="<?= htmlspecialchars($_POST['phone'] ?? '') ?>"placeholder="ex: 0493528587" required>
                 </div>
-
+                <span id="msgmessage"></span>
                 <div class="champ2">
                     <label for="message">Message</label>
                     <div class="textarea-wrapper">
@@ -70,7 +71,7 @@
                     </div>
                 </div>
                 <div>
-                    <span id="charCount" class="char-count">0 / 300 caractères</span>
+                    <span id="charCount" class="char-count"><span id="count">0</span> / 300 caractères</span>
                 </div>                       
 
                 <div class="champ3">
@@ -97,7 +98,7 @@
                             setTimeout(
                                 function() {
                                     window.location.href = "./";
-                                }, 500
+                                }, 5000
                             );
                         </script>
                     </div>
@@ -108,7 +109,7 @@
     </div>
     <ul class="message">
         <?php foreach ($messages as $m): ?>
-            <li class="bloc-msg">
+            <li class="bloc-msg" id="li">
                 <p class="t1"><strong><?= htmlspecialchars($m['firstname'])." " .htmlspecialchars($m['lastname']) ?></strong></p>
                 <p class="t2"><em><?= htmlspecialchars($m['datemessage']) ?></em></p>
                 <p class="t3"><?= nl2br(htmlspecialchars($m['message'])) ?></p>
@@ -148,8 +149,8 @@
 <!-- Pagination (BONUS) -->
 
 
-<footer>
-    <button id="darkmode"> 🌙 darkmode </button>
+<footer id="footer">
+    <button id="dark"> 🌙 darkmode </button>
 <?php
 // À commenter quand on a fini de tester
 // echo "<h3>Nos var_dump() pour le débugage</h3>";

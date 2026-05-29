@@ -4,6 +4,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -11,6 +12,61 @@
     font-family: 'Serrat', sans-serif;
 
 }
+/* darkmode */
+
+#body.sombre {
+    background-image: linear-gradient(to top, #001845, #0466c8);
+    #header, #guestbookForm, #li{
+        box-shadow: 0px 0px 50px #212529; 
+    }
+    #btn-formulaire{
+        background-image: linear-gradient(to right, #001845, #0466c8);
+    }
+    #footer{
+        /* background-image: linear-gradient(to bottom, #001845, #0466c8); */
+        background-color: #001845;
+    }
+    #dark{
+        background-image: linear-gradient(to left, #001845, #0466c8);
+    }
+    /* #btn-formulaire{
+        text-shadow: 0px 0px 4px black;
+    } */
+}
+#body.light{
+    background-image: linear-gradient(to bottom, #ff7b00, #ffea00);
+    /* background-image: linear-gradient(to top, #ff4800, #ff9100); */
+    #header{
+        box-shadow: 0px 0px 50px #212121; 
+    }
+    #btn-formulaire{
+        background-image: linear-gradient(to right, #ff7b00, #ffea00);
+        /* background-image: linear-gradient(to top, #ff4800, #ff9100); */
+    }
+    #footer{
+        /* background-image: linear-gradient(to bottom, #ff7b00, #ffea00); */
+        background-color: #ff7b00;
+        /* background-image: linear-gradient(to top, #ff4800, #ff9100); */
+    }
+    #dark{
+        background-image: linear-gradient(to right, #ff7b00, #ffea00);
+        /* background-image: linear-gradient(to top, #ff4800, #ff9100); */
+    }
+    #header, #guestbookForm, #li{
+        box-shadow: 0px 0px 50px #ff7300; 
+    }
+    /* #btn-formulaire{
+        color: black;
+    } */
+    
+}
+/* #header.sombreh {
+    box-shadow: 0px 0px 50px #212529;
+    box-shadow: 0px 0px 50px #e01e37 #212529; 
+} */
+/* #header.lighth{
+    box-shadow: 0px 0px 50px #e01e37 #e01e37;
+} */
 
 body{
     display: flex;
@@ -18,14 +74,13 @@ body{
     align-items: center;
     flex-direction: column;
     /* background-color: #641220; */
-    background-image: linear-gradient(to bottom, #570e1b, #92172a);
     
 }
 header{
     margin-top: 10px;
     background-color: rgba(255, 255, 255, 0.39);
     border: 1px solid white;
-    box-shadow: 0px 0px 50px #e01e37;
+    box-shadow: 0px 0px 50px #212121; 
     width: 80vw;
     display: flex;
     border-radius: 25px;
@@ -166,6 +221,7 @@ label{
         border-radius: 10px;
         border: 1px solid white;
         background-color: rgba(255, 255, 255, 0.39);
+        padding: 10px;
     }
 }
 .char-count{
@@ -213,6 +269,7 @@ li{
     padding: 15px;
     /* background-color: #2665ee; */
     border: 1px solid white;
+    text-shadow: 0px 0px 10px black;
     background-color: rgba(255, 255, 255, 0.39);
     box-shadow: 0px 0px 50px #e01e37;
 
@@ -224,6 +281,7 @@ li{
     border: 0px;
     font-weight: bold;
     background-color: #92172a;
+    text-shadow: 0px 0px 10px black;
     color: white;
     background-image: linear-gradient(to left, #570e1b, #92172a);
 }
@@ -234,7 +292,9 @@ footer{
     height: 95px;
     width: 99.2vw;
     margin-top: 20px;
-    background-color: #570e1b;
+    /* background-image: linear-gradient(to bottom, #ff7b00, #ffea00); */
+    background-color: #ff7b00;
+    /* background-image: linear-gradient(to top, #ff4800, #ff9100); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,24 +302,45 @@ footer{
         border-radius: 10px;
         padding: 8px 10px;
         height: 33px;
-        border: transparent;
-        background-color: #212121;
+        line-height: 15px;
+        /* border: transparent; */
+        border: 1px solid white;
+        text-shadow: 0px 0px 10px black;
+        font-weight: bold;
+        background-image: linear-gradient(to right, #ff7b00, #ffea00);
+        /* background-image: linear-gradient(to top, #ff4800, #ff9100); */
         color: white;
+
         
     }
 }
 
 
 
-
-
-
-/* darkmode */
-
-#body.sombre {
-    background-color: #121212;
-    color: #ffffff;
+.error{
+    color: red;
+    font-weight: bold;
+    width: 100%;
+    padding-left: 30%;
+    display: block;
 }
+.succes{
+    color: rgb(54, 255, 47);
+    font-weight: bold;
+    width: 100%;
+    padding-left: 30%;
+    display: block;
+}
+.error2{
+    color: red;
+    font-weight: bold;
+}
+.succes2{
+    color: rgb(54, 255, 47);
+    font-weight: bold;
+}
+
+
 
 
 
@@ -323,6 +404,22 @@ footer{
     width: 100%;
     justify-content: center;
 
+    }
+    .champ{
+        flex-direction: column;
+        label{
+            width: 100%;
+            text-align: start;
+            padding-left: 10%;
+        }
+    }
+    .champ2{
+        flex-direction: column;
+        label{
+            width: 100%;
+            text-align: start;
+            padding-left: 10%;
+        }
     }
 
 
